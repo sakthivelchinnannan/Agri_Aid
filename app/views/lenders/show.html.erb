@@ -1,0 +1,19 @@
+<% provide(:title, @lender.name) %>
+<table class="profile">
+  <tr>
+    <td class="main">
+      <h1>
+	<%= @lender.name%>
+      </h1>
+    </td>
+    <td class="sidebar round">
+      <table class="sidebar round">
+      <tr><td><strong>Name</strong></td><td> <%= @lender.name %></td></tr>
+      <tr><td><strong>Address</strong></td><td>  <%= @lender.street %>,<br /><%= @lender.taluk %>,<br /><%= @lender.district %></td></tr>
+      <tr><td><strong>Phone</strong></td><td> <%= @lender.phone %></td></tr>
+	  <tr><td><strong>Email</strong></td><td> <%= @lender.email %></td></tr>
+      </table>
+      <strong>URL</strong>  <%= link_to lender_path(@lender), @lender %>
+    </td>
+  </tr>
+</table>
