@@ -2,7 +2,7 @@
 <h1>Sign up</h1>
 
 <%= form_for(@farmer) do |f| %>
-  <%= render 'shared/error_messages' %>
+  <%= render 'shared/farmer_error_messages' %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
