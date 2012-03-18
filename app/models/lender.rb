@@ -1,4 +1,5 @@
 class Lender < ActiveRecord::Base
+    has_many :lendablemachineries, foreign_key: "lender_id", dependent: :destroy
     attr_accessible :name, :phone, :email, :street, :taluk, :district
     before_save :create_remember_token
 	validates :name,  presence: true, length: { maximum: 50 }

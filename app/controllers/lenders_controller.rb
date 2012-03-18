@@ -5,6 +5,7 @@ class LendersController < ApplicationController
 
   def show
       @lender=Lender.find(params[:id])
+      @lendablemachinery = @lender.lendablemachineries
   end
 
   def create

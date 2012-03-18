@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120318050746) do
+ActiveRecord::Schema.define(:version => 20120318173641) do
 
   create_table "dealers", :force => true do |t|
     t.string   "name"
@@ -38,6 +38,19 @@ ActiveRecord::Schema.define(:version => 20120318050746) do
   add_index "farmers", ["phone"], :name => "index_farmers_on_phone", :unique => true
   add_index "farmers", ["remember_token"], :name => "index_farmers_on_remember_token"
 
+  create_table "lendablemachineries", :force => true do |t|
+    t.integer  "machinery_id"
+    t.integer  "lender_id"
+    t.integer  "numofmachines"
+    t.float    "rateperhr"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lendablemachineries", ["lender_id", "machinery_id"], :name => "index_lendablemachineries_on_lender_id_and_machinery_id", :unique => true
+  add_index "lendablemachineries", ["lender_id"], :name => "index_lendablemachineries_on_lender_id"
+  add_index "lendablemachineries", ["machinery_id"], :name => "index_lendablemachineries_on_machinery_id"
+
   create_table "lenders", :force => true do |t|
     t.string   "name"
     t.string   "phone"
@@ -52,5 +65,13 @@ ActiveRecord::Schema.define(:version => 20120318050746) do
 
   add_index "lenders", ["email"], :name => "index_lenders_on_email", :unique => true
   add_index "lenders", ["remember_token"], :name => "index_lenders_on_remember_token"
+
+  create_table "machineries", :force => true do |t|
+    t.string   "name"
+    t.string   "machine_type"
+    t.string   "manufacturer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
