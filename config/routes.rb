@@ -2,13 +2,19 @@ Proj1Primal::Application.routes.draw do
 
   resources :farmers
   resources :lenders
+  resources :farmersessions, only: [:new, :create, :destroy]
+  resources :lendersessions, only: [:new, :create, :destroy]
 
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
   match '/farmersignup', to: 'farmers#new'
   match '/lendersignup', to: 'lenders#new'
-  
+  match '/farmersignin', to: 'farmersessions#new'
+  match '/lendersignin', to: 'lendersessions#new'
+  match '/farmersignout', to: 'farmersessions#destroy', via: :delete
+  match '/lendersignout', to: 'lendersessions#destroy', via: :delete
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

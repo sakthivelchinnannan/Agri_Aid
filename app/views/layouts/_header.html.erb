@@ -3,7 +3,25 @@
     <nav class="round">
       <ul>
         <li><%= link_to "Home", root_path %></li>
+		<% if farmer_signed_in? %>
+        	<li><%= link_to "Profile", current_farmer %></li>
+        <% end %>
+		<% if lender_signed_in? %>
+        	<li><%= link_to "Profile", current_lender %></li>
+        <% end %>
         <li><%= link_to "Help", help_path %></li>
+        <% if farmer_signed_in? && !lender_signed_in? %>
+        	<li><%= link_to "Sign out", farmersignout_path, method: :delete %></li>
+			<% bool = true %>
+		<% end %>
+		<% if lender_signed_in? && !farmer_signed_in?  %>
+		    <li><%= link_to "Sign out", lendersignout_path, method: :delete %></li>
+			<% bool = true %>
+		<% end %>
+        <% if !bool %>
+        	<li><%= link_to "Farmer Sign in", farmersignin_path %></li>
+			<li><%= link_to "Lender Sign in", lendersignin_path %></li>
+        <% end %>
       </ul>
     </nav>
 </header>

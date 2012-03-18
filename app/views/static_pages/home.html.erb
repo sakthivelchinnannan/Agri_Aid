@@ -5,6 +5,8 @@
 <h1>Sample App</h1>
 <p>
   This is the home page for the primal application done by me using Ruby on Rails.<br /><br />
-  <%= link_to "Farmer Sign up!", farmersignup_path, class: "signup_button round" %><br />
-  <%= link_to "Lender Sign up!", lendersignup_path, class: "signup_button round" %><br />
+  <% if !farmer_signed_in? && !lender_signed_in? %>
+  	<%= link_to "Farmer Sign up!", farmersignup_path, class: "signup_button round" %><br />
+  	<%= link_to "Lender Sign up!", lendersignup_path, class: "signup_button round" %><br />
+  <% end %>
 </p>
