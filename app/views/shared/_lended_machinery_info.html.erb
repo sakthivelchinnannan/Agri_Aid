@@ -1,0 +1,6 @@
+<% if @lender.lendablemachineries.any? %>
+  <table>
+  <tr><td><b>Machinery Id</b></td><td><b>Rate Per Hour</b></td><td><b>No of Machines</b></td></tr>
+    <%= render @lendablemachinery %>
+  </table>
+<% end %>

@@ -4,6 +4,7 @@ Proj1Primal::Application.routes.draw do
   resources :lenders
   resources :farmersessions, only: [:new, :create, :destroy]
   resources :lendersessions, only: [:new, :create, :destroy]
+  resources :lendablemachineries, only: [:create, :destroy]
 
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'

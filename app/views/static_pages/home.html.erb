@@ -1,12 +1,29 @@
 <% provide(:title, 'Home')%>
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% if lender_signed_in? %>
+  <table class="front">
+    <tr>
+      <td class="main">
+        <h1 class="micropost">Add Lendable Machinery</h1>
+        <%= render 'shared/lendablemachinery_form' %>
+      </td>
+      <td class="sidebar round">
+        <%= render 'shared/lender_info' %>
+      </td>
+    </tr>
+	<tr>
+	       <%= render 'shared/lended_machinery_info' %>
+	</tr>
+  </table>
+<% else %>
+	<h1>StaticPages#home</h1>
+	<p>Find me in app/views/static_pages/home.html.erb</p>
 
-<h1>Sample App</h1>
-<p>
-  This is the home page for the primal application done by me using Ruby on Rails.<br /><br />
-  <% if !farmer_signed_in? && !lender_signed_in? %>
-  	<%= link_to "Farmer Sign up!", farmersignup_path, class: "signup_button round" %><br />
-  	<%= link_to "Lender Sign up!", lendersignup_path, class: "signup_button round" %><br />
-  <% end %>
-</p>
+	<h1>Sample App</h1>
+	<p>
+	  This is the home page for the primal application done by me using Ruby on Rails.<br /><br />
+	  <% if !farmer_signed_in? && !lender_signed_in? %>
+	  	<%= link_to "Farmer Sign up!", farmersignup_path, class: "signup_button round" %><br />
+	  	<%= link_to "Lender Sign up!", lendersignup_path, class: "signup_button round" %><br />
+	  <% end %>
+	</p>
+<% end %>

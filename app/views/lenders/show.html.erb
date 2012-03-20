@@ -5,22 +5,10 @@
       <h1>Lender Name:
 	<%= @lender.name%>
       </h1><br />
-      <% if @lender.lendablemachineries.any? %>
-        <table>
-		  <tr><td><b>Machine Name</b></td><td><b>Machine Type</b></td><td><b>Machine Manufacturer</b></td><td><b>Rate Per Hour</b></td><td><b>No of Machines</b></td></tr>
-          <%= render @lendablemachinery %>
-        </table>
-      <% end %>
-
+       <%= render 'shared/lended_machinery_info' %>
     </td>
     <td class="sidebar round">
-      <table class="sidebar round">
-      <tr><td><strong>Name</strong></td><td> <%= @lender.name %></td></tr>
-      <tr><td><strong>Address</strong></td><td>  <%= @lender.street %>,<br /><%= @lender.taluk %>,<br /><%= @lender.district %></td></tr>
-      <tr><td><strong>Phone</strong></td><td> <%= @lender.phone %></td></tr>
-	  <tr><td><strong>Email</strong></td><td> <%= @lender.email %></td></tr>
-      </table>
-      <strong>URL</strong>  <%= link_to lender_path(@lender), @lender %>
+       <%= render 'shared/lender_info' %>
     </td>
   </tr>
 </table>

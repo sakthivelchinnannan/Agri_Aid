@@ -9,7 +9,7 @@ class LendersessionsController < ApplicationController
     if lender
         # Sign the user in and redirect to the user's show page.
 	    lender_sign_in lender
-        redirect_to lender
+        redirect_back_or lender
     else
         # Create an error message and re-render the signin form.
 	    flash.now[:error] = 'Invalid email/password combination'

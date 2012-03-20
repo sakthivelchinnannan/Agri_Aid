@@ -1,0 +1,18 @@
+<%= form_for(@lendablemachineryadded) do |f| %>
+  <%= render 'shared/lender_error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :machinery_id %><br />
+    <%= f.text_field :machinery_id %>
+  </div>
+  <div class="field">
+    <%= f.label :num_of_machines %><br />
+    <%= f.text_field :numofmachines %>
+  </div>
+  <div class="field">
+    <%= f.label :rate_per_hour %><br />
+    <%= f.text_field :rateperhr %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
