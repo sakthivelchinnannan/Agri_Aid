@@ -1,4 +1,4 @@
-Proj1Primal::Application.routes.draw do
+AgriAid::Application.routes.draw do
 
   resources :farmers
   resources :lenders
