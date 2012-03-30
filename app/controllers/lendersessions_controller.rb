@@ -9,7 +9,9 @@ class LendersessionsController < ApplicationController
     if lender
         # Sign the user in and redirect to the user's show page.
 	    lender_sign_in lender
-        redirect_back_or lender
+	  	@lendablemachineryadded = lender.lendablemachineries.build if lender_signed_in?	# Useless as of now. Should be corrected!
+		redirect_to lender # Shows the Profile page after sign in.
+		# redirect_to root_path # Actually not needed & poses issues with machineries display.
     else
         # Create an error message and re-render the signin form.
 	    flash.now[:error] = 'Invalid email/password combination'

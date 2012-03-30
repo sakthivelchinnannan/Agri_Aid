@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120318173641) do
+ActiveRecord::Schema.define(:version => 20120328181250) do
 
   create_table "dealers", :force => true do |t|
     t.string   "name"
@@ -68,10 +68,21 @@ ActiveRecord::Schema.define(:version => 20120318173641) do
 
   create_table "machineries", :force => true do |t|
     t.string   "name"
-    t.string   "machine_type"
     t.string   "manufacturer"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "machinerycategory_id"
   end
+
+  add_index "machineries", ["machinerycategory_id"], :name => "index_machineries_on_machinerycategory_id"
+
+  create_table "machinerycategories", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "machinerycategories", ["name"], :name => "index_machinerycategories_on_name", :unique => true
 
 end

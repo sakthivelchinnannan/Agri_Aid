@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Proj1Primal::Application.load_tasks
+AgriAid::Application.load_tasks

@@ -2,13 +2,14 @@
 <table class="profile">
   <tr>
     <td class="main">
-      <h1>Lender Name:
-	<%= @lender.name%>
-      </h1><br />
-       <%= render 'shared/lended_machinery_info' %>
+      <h1 class="micropost">Add Lendable Machinery</h1>
+	  <p>## Form to be added ##</p>
     </td>
     <td class="sidebar round">
        <%= render 'shared/lender_info' %>
     </td>
+  </tr>
+  <tr>
+    <%= render 'shared/lended_machinery_info' %>
   </tr>
 </table>

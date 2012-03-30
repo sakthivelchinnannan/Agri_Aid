@@ -13,6 +13,7 @@ AgriAid::Application.routes.draw do
   match '/lendersignup', to: 'lenders#new'
   match '/farmersignin', to: 'farmersessions#new'
   match '/lendersignin', to: 'lendersessions#new'
+  match '/lender', to: 'lenders#show'
   match '/farmersignout', to: 'farmersessions#destroy', via: :delete
   match '/lendersignout', to: 'lendersessions#destroy', via: :delete
 

@@ -1,11 +1,11 @@
 <div class="user_info">
 	<table class="sidebar round">
-      <tr><td><strong>Lender Name</strong></td><td> <%= @lender.name %></td></tr>
-      <tr><td><strong>Address</strong></td><td>  <%= @lender.street %>,<br /><%= @lender.taluk %>,<br /><%= @lender.district %></td></tr>
-      <tr><td><strong>Phone</strong></td><td> <%= @lender.phone %></td></tr>
-	  <tr><td><strong>Email</strong></td><td> <%= @lender.email %></td></tr>
+      <tr><td><strong>Lender Name</strong></td><td> <%= current_lender.name %></td></tr>
+      <tr><td><strong>Address</strong></td><td>  <%= current_lender.street %>,<br /><%= current_lender.taluk %>,<br /><%= current_lender.district %></td></tr>
+      <tr><td><strong>Phone</strong></td><td> <%= current_lender.phone %></td></tr>
+	  <tr><td><strong>Email</strong></td><td> <%= current_lender.email %></td></tr>
     </table>
-    <strong>URL</strong>  <%= link_to lender_path(@lender), @lender %><br />
+    <strong>URL</strong>  <%= link_to lender_path(current_lender), current_lender %><br />
 
     <span class="microposts">Lender has 
       <%= pluralize(current_lender.lendablemachineries.count, "lendable machinery") %>

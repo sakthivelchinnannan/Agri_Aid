@@ -7,7 +7,7 @@ class LendablemachineriesController < ApplicationController
       flash[:success] = "Lendable machine added!"
       redirect_to root_path
     else
-      render 'static_pages/home'
+      render root_path
     end
   end
 
