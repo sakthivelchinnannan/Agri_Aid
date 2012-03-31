@@ -1,8 +1,8 @@
 <%= form_for(@lendablemachineryadded) do |f| %>
   <%= render 'shared/lender_error_messages', object: f.object %>
   <div class="field">
-    <%= f.label :machinery_id %><br />
-	<%= f.select("machinery_id", Machinery.all.collect {|m| [m.name, m.id]}) %>
+    <%= f.label :select_machinery %><br />
+	<%= f.select(:machinery_id, option_groups_from_collection_for_select(Machinerycategory.all, :machineries, :name, :id, :name))%>
   </div>
   <div class="field">
     <%= f.label :num_of_machines %><br />
