@@ -7,3 +7,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+jQuery(function($) {
+$("#machinerycategory_id").change(function(){
+  var url = '/static_pages/machine_select?machinerycategory_id=' + $(this).val()
+//  $("#machinery_id").removeOption(/./)
+  jQuery.get(url, function(data) {
+//    $('#machinery_id').addOption(data, false);
+	$("#machineSelect").html(data);
+  });
+  return false;
+});
+})
