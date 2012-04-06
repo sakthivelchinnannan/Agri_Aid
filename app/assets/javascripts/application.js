@@ -9,13 +9,21 @@
 //= require_tree .
 
 jQuery(function($) {
+
+$("#category_id").change(function(){
+  var url = '/static_pages/updatedistrict_select?machinerycategory_id=' + $(this).val()
+  jQuery.get(url, function(data) {
+	$("#districtSelect").html(data);
+  });
+  return false;
+});
+
 $("#machinerycategory_id").change(function(){
   var url = '/static_pages/machine_select?machinerycategory_id=' + $(this).val()
-//  $("#machinery_id").removeOption(/./)
   jQuery.get(url, function(data) {
-//    $('#machinery_id').addOption(data, false);
 	$("#machineSelect").html(data);
   });
   return false;
 });
+
 })

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120328181250) do
+ActiveRecord::Schema.define(:version => 20120406063010) do
 
   create_table "dealers", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(:version => 20120328181250) do
     t.string   "street"
     t.string   "taluk"
     t.string   "district"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "districts", :force => true do |t|
+    t.integer  "district_cd"
+    t.string   "name"
+    t.integer  "state_cd"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -56,11 +64,13 @@ ActiveRecord::Schema.define(:version => 20120328181250) do
     t.string   "phone"
     t.string   "email"
     t.string   "street"
-    t.string   "taluk"
-    t.string   "district"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_token"
+    t.integer  "village_cd"
+    t.integer  "taluk_cd"
+    t.integer  "district_cd"
+    t.integer  "state_cd"
   end
 
   add_index "lenders", ["email"], :name => "index_lenders_on_email", :unique => true
@@ -84,5 +94,28 @@ ActiveRecord::Schema.define(:version => 20120328181250) do
   end
 
   add_index "machinerycategories", ["name"], :name => "index_machinerycategories_on_name", :unique => true
+
+  create_table "states", :force => true do |t|
+    t.integer  "state_cd"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "taluks", :force => true do |t|
+    t.integer  "taluk_cd"
+    t.string   "name"
+    t.integer  "district_cd"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "villages", :force => true do |t|
+    t.integer  "village_cd"
+    t.string   "name"
+    t.integer  "taluk_cd"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

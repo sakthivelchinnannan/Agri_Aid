@@ -17,6 +17,10 @@ AgriAid::Application.routes.draw do
   match '/farmersignout', to: 'farmersessions#destroy', via: :delete
   match '/lendersignout', to: 'lendersessions#destroy', via: :delete
   
+  match 'static_pages/searchmachine_select/', :controller => 'static_pages', :action => 'searchmachine_select'
+  match 'static_pages/updatedistrict_select/', :controller => 'static_pages', :action => 'updatedistrict_select'
+  match 'static_pages/updatetaluk_select/', :controller => 'static_pages', :action => 'updatetaluk_select'
+  match 'static_pages/updatevillage_select/', :controller => 'static_pages', :action => 'updatevillage_select'
   match 'static_pages/machine_select/', :controller => 'static_pages', :action => 'machine_select'
 
   # The priority is based upon order of creation:

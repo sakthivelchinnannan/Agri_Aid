@@ -1,7 +1,14 @@
 <div class="user_info">
 	<table class="sidebar round">
       <tr><td><strong>Lender Name</strong></td><td> <%= current_lender.name %></td></tr>
-      <tr><td><strong>Address</strong></td><td>  <%= current_lender.street %>,<br /><%= current_lender.taluk %>,<br /><%= current_lender.district %></td></tr>
+      <tr><td><strong>Address</strong></td>
+	  <td>
+	  	<%= current_lender.street %>,<br />
+		<%= Village.find_by_village_cd(current_lender.village_cd).name %> Village,<br />
+		<%= Taluk.find_by_taluk_cd(current_lender.taluk_cd).name %> Taluk,<br />
+		<%= District.find_by_district_cd(current_lender.district_cd).name %> District,<br />
+		<%= State.find_by_state_cd(current_lender.state_cd).name %>
+	  </td></tr>
       <tr><td><strong>Phone</strong></td><td> <%= current_lender.phone %></td></tr>
 	  <tr><td><strong>Email</strong></td><td> <%= current_lender.email %></td></tr>
     </table>

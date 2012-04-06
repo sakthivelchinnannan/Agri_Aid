@@ -1,2 +1,2 @@
 <%= label(:lendablemachineryadded, :select_machinery) %><br />
-<%= select(:lendablemachinery, :machinery_id, options_for_select(machines.collect {|m|[m.name,m.id]})) %>
+<%= select(:lendablemachinery, :machinery_id, options_for_select(machines.collect {|m|[m.name,m.id]}.insert(0,'Select a machinery..'))) %>

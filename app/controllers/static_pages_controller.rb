@@ -7,19 +7,29 @@ class StaticPagesController < ApplicationController
 	end
   end
 
-#def get_drop_down_options
+def updatedistrict_select
+  render :partial => "districts_select"
+end
+
+# Since "State Select" is not used!
+# def updatedistrict_select
+  # districts = District.where(:state_cd=>params[:state_cd]).order(:name)
+  # render :partial => "districts_select", :locals => { :districts => districts }
+# end
+
+def updatetaluk_select
+  taluks = Taluk.where(:district_cd=>params[:district_cd]).order(:name)
+  render :partial => "taluks_select", :locals => { :taluks => taluks }
+end
+
+def updatevillage_select
+  villages = Village.where(:taluk_cd=>params[:taluk_cd]).order(:name)
+  render :partial => "villages_select", :locals => { :villages => villages }
+end
+
 def machine_select
-  val = params[:machinerycategory_id]
   machines = Machinery.where(:machinerycategory_id=>params[:machinerycategory_id]).order(:name)
   render :partial => "machines_select", :locals => { :machines => machines }
-
-  #states = Region.where(:country_id=>params[:id]).order(:name) unless params[:id].blank?
-  #render :partial => "states", :locals => { :states => states }
-
-  #Use val to find records	#V2.0 not exactly understood!
-  #@array=Machinery.find_by_machinerycategory_id(val)
-  #options = Machinery.all.collect{|x| "'#{x.id}' : '#{x.label}'"}    
-  #render :text => "{#{options.join(",")}}" 
 end
 
   def help

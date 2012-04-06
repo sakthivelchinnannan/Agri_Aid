@@ -9,6 +9,6 @@ module ApplicationHelper
     end
   end
   def logo
-    image_tag("PrimalProjLogo.png", alt: "Primal Project", class: "round")
+    image_tag("AgriAidLogo.png", alt: "Primal Project", class: "round")
   end
 end	
