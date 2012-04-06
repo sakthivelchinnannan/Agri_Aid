@@ -1,0 +1,14 @@
+<script type="text/javascript">
+jQuery(function($) {
+$("#taluk_cd").change(function(){
+  var url = '/static_pages/updatevillage_select?taluk_cd=' + $(this).val()
+  jQuery.get(url, function(data) {
+	$("#villageSelect").html(data);
+  });
+  return false;
+});
+})
+</script>
+
+<%= label_tag(:select_taluk) %><br />
+<%= select_tag(:taluk_cd, options_for_select(taluks.collect {|m|[m.name,m.taluk_cd]}.insert(0,'Select a taluk..'))) %>
