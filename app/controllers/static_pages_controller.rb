@@ -32,6 +32,32 @@ def machine_select
   render :partial => "machines_select", :locals => { :machines => machines }
 end
 
+def search_machinery
+	category_id=params[:category_id]
+	district_cd=params[:district_cd]
+	taluk_cd=params[:taluk_cd]
+	lendablemachineries=Lendablemachinery.find_by_sql(
+		"SELECT LM.lender_id, LM.numofmachines, LM.rateperhr, M.id, M.name mname, M.manufacturer, L.name lname, 
+		 L.phone, L.street, L.village_cd, L.taluk_cd, L.district_cd, L.state_cd
+		 FROM lendablemachineries LM
+		 INNER JOIN machineries M
+		 ON M.id = LM.machinery_id AND M.machinerycategory_id = #{category_id} AND LM.numofmachines > 0
+		 INNER JOIN lenders L
+		 ON L.id = LM.lender_id AND L.district_cd = #{district_cd} AND L.taluk_cd = #{taluk_cd}")
+	# dis=''
+    # lendablemachineries.each { |m|	# an array of objects!
+	 	 # dis=dis+m.mname+', '
+	# }
+
+	render :partial => "search_machinery", :locals => {:lendablemachineries=>lendablemachineries}
+	
+    # respond_to do |format|
+		# format.html {render :template => "/static_pages/search_machinery", :locals => {:lendablemachineries=>lendablemachineries}}
+		# format.html	{redirect_to(root_path)}
+		# format.js
+	# end
+end
+
   def help
   end
 

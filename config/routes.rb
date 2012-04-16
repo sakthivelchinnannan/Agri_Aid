@@ -22,6 +22,7 @@ AgriAid::Application.routes.draw do
   match 'static_pages/updatetaluk_select/', :controller => 'static_pages', :action => 'updatetaluk_select'
   match 'static_pages/updatevillage_select/', :controller => 'static_pages', :action => 'updatevillage_select'
   match 'static_pages/machine_select/', :controller => 'static_pages', :action => 'machine_select'
+  match 'static_pages/search_machinery/', :controller => 'static_pages', :action => 'search_machinery'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

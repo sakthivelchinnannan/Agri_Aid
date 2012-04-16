@@ -1,6 +1,7 @@
 <script type="text/javascript">
 jQuery(function($) {
 $("#district_cd").change(function(){
+  $("#talukSelect").html('<img src="assets/276.gif" alt="Fetching..." width="100px" height="30px" />')
   var url = '/static_pages/updatetaluk_select?district_cd=' + $(this).val()
   jQuery.get(url, function(data) {
 	$("#talukSelect").html(data);
@@ -10,5 +11,4 @@ $("#district_cd").change(function(){
 })
 </script>
 
-<%= label_tag(:select_district) %><br />
 <%= select_tag(:district_cd, options_for_select(District.all.map {|m|[m.name,m.district_cd]}.insert(0,'Select a district..'))) %>

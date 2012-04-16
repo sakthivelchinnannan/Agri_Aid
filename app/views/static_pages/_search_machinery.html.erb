@@ -1,0 +1,30 @@
+<% if !lendablemachineries.empty? %>
+	<div id="machinerydetails">
+	<table class="machinelist">
+		<tr class="th2">
+			<th>Name</th>
+			<th>Phone</th>
+			<th>Address</th>
+			<th>Name</th>
+			<th>Manufacturer</th>
+			<th>RPH</th>
+		</tr>
+		<% lendablemachineries.each do |m| %> 
+		<tr class="machinerow">
+			<td><%= m.lname %></td>
+			<td><%= m.phone %></td>
+			<td>
+				<%= m.street %><br/>
+				<%= Taluk.find_by_taluk_cd(m.taluk_cd).name %>
+			</td>
+			<td><%= m.mname %></td>
+			<td><%= m.manufacturer %></td>
+			<td><%= m.rateperhr %></td>
+		</tr>
+		<% end %>
+	</table>
+	</div>
+	<p><%= link_to "Go back to Search!", root_path %></p>
+<% else %>
+	<p style="color:orange; font-style:italic; text-align:center"><b>There are no machineries of selected category in this taluk!</b></p>
+<% end %>

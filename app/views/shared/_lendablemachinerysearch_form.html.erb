@@ -1,21 +1,15 @@
+<div id="mcsearcherror"></div>
 <%= form_tag(:id => "machinerysearchform") do %>
-  <div class="field">
-    <%= label_tag :select_machinery_category %><br />
+  <span class="field">
 	<%= select_tag(:category_id, options_for_select(Machinerycategory.all.map {|m|[m.name,m.id]}.insert(0,'Select a category..'))) %>
-  </div>
+  </span>
 <!--  <div id="stateSelect">
   	State selection
   </div></br>	-->
-  <div id="districtSelect">
-  	District selection  
-  </div></br>
-  <div id="talukSelect">
-  	Taluk selection
-  </div></br>
-  <div id="villageSelect">
-  	Village selection
-  </div></br>
-  <div class="actions">
-    <%= submit_tag "Submit" %>
-  </div>
+  <span id="districtSelect">
+  </span>
+  <span id="talukSelect">
+  </span>
+  <span id="villageSelect">
+  </span>
 <% end %>

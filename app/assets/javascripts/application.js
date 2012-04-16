@@ -11,6 +11,7 @@
 jQuery(function($) {
 
 $("#category_id").change(function(){
+  $("#districtSelect").html('<img src="assets/276.gif" alt="Fetching..." width="100px" height="30px" />')
   var url = '/static_pages/updatedistrict_select?machinerycategory_id=' + $(this).val()
   jQuery.get(url, function(data) {
 	$("#districtSelect").html(data);
@@ -19,6 +20,7 @@ $("#category_id").change(function(){
 });
 
 $("#machinerycategory_id").change(function(){
+  $("#machineSelect").html('<img src="assets/276.gif" alt="Fetching..." width="100px" height="30px" />')
   var url = '/static_pages/machine_select?machinerycategory_id=' + $(this).val()
   jQuery.get(url, function(data) {
 	$("#machineSelect").html(data);

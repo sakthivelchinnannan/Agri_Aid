@@ -1,6 +1,7 @@
 <script type="text/javascript">
 jQuery(function($) {
 $("#taluk_cd").change(function(){
+  $("#villageSelect").html('<img src="assets/276.gif" alt="Fetching..." width="100px" height="30px" />')
   var url = '/static_pages/updatevillage_select?taluk_cd=' + $(this).val()
   jQuery.get(url, function(data) {
 	$("#villageSelect").html(data);
@@ -10,5 +11,4 @@ $("#taluk_cd").change(function(){
 })
 </script>
 
-<%= label_tag(:select_taluk) %><br />
 <%= select_tag(:taluk_cd, options_for_select(taluks.collect {|m|[m.name,m.taluk_cd]}.insert(0,'Select a taluk..'))) %>
