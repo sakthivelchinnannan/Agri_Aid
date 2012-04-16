@@ -5,7 +5,7 @@ $("#mcsearchsubmit").click(function(){
   	$("#mcsearcherror").html('<p style="color:red; font-style:bold">Choose a valid option!</p>');
   }
   else {
-      $("#mcsearcherror").remove('p')
+      $("#mcsearcherror").html('<p></p>')
 	  $("#machinerydetails").html('<img src="assets/276.gif" alt="Fetching..." width="100px" height="30px" />')
 	  var url = '/static_pages/search_machinery?category_id=' + $("#category_id").val() + '&district_cd=' + $("#district_cd").val() + '&taluk_cd=' + $("#taluk_cd").val()
 	  jQuery.get(url, function(data) {
