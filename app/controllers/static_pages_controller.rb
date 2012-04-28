@@ -32,6 +32,13 @@ def machine_select
   render :partial => "machines_select", :locals => { :machines => machines }
 end
 
+def check_machine_select
+	lender_id=params[:lender_id]
+	machinery_id=params[:machinery_id]
+	machine = Lendablemachinery.find_by_sql("SELECT * FROM lendablemachineries WHERE lender_id = #{lender_id} AND machinery_id = #{machinery_id}")
+	render :partial => "addlmachines_select", :locals => {:machine=>machine}
+end
+
 def search_machinery
 	category_id=params[:category_id]
 	district_cd=params[:district_cd]

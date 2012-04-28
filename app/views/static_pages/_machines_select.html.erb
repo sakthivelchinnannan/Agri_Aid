@@ -1,1 +1,16 @@
+<script type="text/javascript">
+jQuery(function($) {
+$("#lendablemachinery_machinery_id").change(function(){
+
+  $("#lmcavailcheck").html('<img src="assets/365.gif" alt="Fetching..." width="30px" height="20px" />')
+  var url = '/static_pages/check_machine_select?machinery_id=' + $(this).val() + '&lender_id=' + <%= current_lender.id %>
+  jQuery.get(url, function(data) {
+	$("#lmcavailcheck").html(data);
+  });
+
+  return false;
+});
+})
+</script>
+
 <%= select(:lendablemachinery, :machinery_id, options_for_select(machines.collect {|m|[m.name,m.id]}.insert(0,'Select a machinery..'))) %>
