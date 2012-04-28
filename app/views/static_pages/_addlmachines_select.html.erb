@@ -1,0 +1,15 @@
+<% if !machines.empty? %>
+	<p style="color:red; font-style:italic"><b>Machinery already in lender's list!</b></p>
+<% else %>
+  <div class="field">
+    <%= f.label :num_of_machines %><br />
+    <%= f.text_field :numofmachines %>
+  </div>
+  <div class="field">
+    <%= f.label :rate_per_hour %><br />
+    <%= f.text_field :rateperhr %>
+  </div>
+  <div class="actions" style="width:50%; text-align:center">
+    <%= submit_tag("Submit", :id => "lmcaddsubmit") %>
+  </div>
+<% end %>
