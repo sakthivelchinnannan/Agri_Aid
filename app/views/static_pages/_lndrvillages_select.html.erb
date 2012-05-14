@@ -1,0 +1,1 @@
+<%= select(:lender, :village_cd, options_for_select(villages.collect {|m|[m.name,m.village_cd]}.insert(0,'Select a village..'))) %>

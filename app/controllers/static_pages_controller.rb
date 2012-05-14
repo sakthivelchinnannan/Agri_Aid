@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
 		@lendablemachineryadded = current_lender.lendablemachineries.build if lender_signed_in?
 	end
   end
-
+ 
 def updatedistrict_select
   render :partial => "districts_select"
 end
@@ -26,6 +26,18 @@ def updatevillage_select
   villages = Village.where(:taluk_cd=>params[:taluk_cd]).order(:name)
   render :partial => "villages_select", :locals => { :villages => villages }
 end
+
+###############
+def lndr_updatetaluk_select
+  taluks = Taluk.where(:district_cd=>params[:district_cd]).order(:name)
+  render :partial => "lndrtaluks_select", :locals => { :taluks => taluks }
+end
+
+def lndr_updatevillage_select
+  villages = Village.where(:taluk_cd=>params[:taluk_cd]).order(:name)
+  render :partial => "lndrvillages_select", :locals => { :villages => villages }
+end
+##############
 
 def machine_select
   machines = Machinery.where(:machinerycategory_id=>params[:machinerycategory_id]).order(:name)

@@ -28,4 +28,24 @@ $("#machinerycategory_id").change(function(){
   return false;
 });
 
+$("#district_cd").change(function(){
+  $("#talukSelect").html('<img src="assets/276.gif" alt="Fetching..." width="100px" height="30px" />')
+  var url = '/static_pages/updatetaluk_select?district_cd=' + $(this).val()
+  jQuery.get(url, function(data) {
+	$("#talukSelect").html(data);
+  });
+  return false;
+});
+
+//////////////
+$("#lender_district_cd").change(function(){
+  $("#talukSelect").html('<img src="assets/366.gif" alt="Fetching..." />')
+  var url = '/static_pages/lndr_updatetaluk_select?district_cd=' + $(this).val()
+  jQuery.get(url, function(data) {
+	$("#talukSelect").html(data);
+  });
+  return false;
+});
+//////////////
+
 })

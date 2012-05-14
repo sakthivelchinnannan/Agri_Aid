@@ -1,0 +1,14 @@
+<script type="text/javascript">
+jQuery(function($) {
+$("#lender_taluk_cd").change(function(){
+  $("#villageSelect").html('<img src="assets/366.gif" alt="Fetching..." />')
+  var url = '/static_pages/lndr_updatevillage_select?taluk_cd=' + $(this).val()
+  jQuery.get(url, function(data) {
+	$("#villageSelect").html(data);
+  });
+  return false;
+});
+})
+</script>
+
+<%= select(:lender, :taluk_cd, options_for_select(taluks.collect {|m|[m.name,m.taluk_cd]}.insert(0,'Select a taluk..'))) %>
