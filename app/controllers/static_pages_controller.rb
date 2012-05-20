@@ -56,12 +56,12 @@ def search_machinery
 	district_cd=params[:district_cd]
 	taluk_cd=params[:taluk_cd]
 	lendablemachineries=Lendablemachinery.find_by_sql(
-		"SELECT LM.lender_id, LM.numofmachines, LM.rateperhr, M.id, M.name mname, M.manufacturer, L.name lname, 
+		"SELECT LM.lender_id, LM.numofmachines, LM.rateperhr, M.id, M.name AS mname, M.manufacturer, L.name AS lname, 
 		 L.phone, L.street, L.village_cd, L.taluk_cd, L.district_cd, L.state_cd
-		 FROM lendablemachineries LM
-		 INNER JOIN machineries M
+		 FROM lendablemachineries AS LM
+		 INNER JOIN machineries AS M
 		 ON M.id = LM.machinery_id AND M.machinerycategory_id = #{category_id} AND LM.numofmachines > 0
-		 INNER JOIN lenders L
+		 INNER JOIN lenders AS L
 		 ON L.id = LM.lender_id AND L.district_cd = #{district_cd} AND L.taluk_cd = #{taluk_cd}")
 	# dis=''
     # lendablemachineries.each { |m|	# an array of objects!
