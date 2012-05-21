@@ -1,10 +1,14 @@
 <script type="text/javascript">
 jQuery(function($) {
 $("#taluk_cd").change(function(){
-  $("#villageSelect").html('<img src="assets/276.gif" alt="Fetching..." width="100px" height="30px" />')
+  $("div.ui-overlay").css({'visibility':'visible'})
+  $("div.ui-widget").css({'visibility':'visible'})
+  $("#forOverlay").addClass("fakewindowcontain")
   var url = '/static_pages/updatevillage_select?taluk_cd=' + $(this).val()
   jQuery.get(url, function(data) {
 	$("#villageSelect").html(data);
+	$("div.ui-overlay").css({'visibility':'hidden'})
+	$("div.ui-widget").css({'visibility':'hidden'})
   });
   return false;
 });

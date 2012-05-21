@@ -2,10 +2,14 @@
 jQuery(function($) {
 $("#lendablemachinery_machinery_id").change(function(){
 
-  $("#lmcavailcheck").html('<img src="assets/365.gif" alt="Fetching..." width="30px" height="20px" />')
+  $("div.ui-overlay").css({'visibility':'visible'})
+  $("div.ui-widget").css({'visibility':'visible'})
+  $("#forOverlay").addClass("fakewindowcontain")
   var url = '/static_pages/check_machine_select?machinery_id=' + $(this).val() + '&lender_id=' + <%= current_lender.id %>
   jQuery.get(url, function(data) {
 	$("#lmcavailcheck").html(data);
+	$("div.ui-overlay").css({'visibility':'hidden'})
+	$("div.ui-widget").css({'visibility':'hidden'})
   });
 
   return false;
