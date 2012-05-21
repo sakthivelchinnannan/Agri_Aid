@@ -60,4 +60,7 @@ AgriAid::Application.configure do
 
   # Precompile Blueprint CSS
   config.assets.precompile += [ "blueprint/*.css" ]
+
+  # Precompile jquery-ui CSS
+  config.assets.precompile += [ "jquery-ui/ui-lightness/*.css" ]
 end
