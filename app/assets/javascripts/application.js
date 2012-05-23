@@ -7,6 +7,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require jquery.ui.core
+//= require jquery.ui.widget
+//= require jquery.ui.dialog
 
 jQuery(function($) {
 
