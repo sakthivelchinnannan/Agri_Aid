@@ -1,6 +1,8 @@
 <header>
+
     <%= link_to logo, root_path %>
-    <nav class="round">
+	
+    <nav>
       <ul>
         <li><%= link_to "Home", root_path %></li>
 		<% if farmer_signed_in? %>

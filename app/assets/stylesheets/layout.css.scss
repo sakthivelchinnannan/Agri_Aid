@@ -6,6 +6,20 @@ body {
   background: white;
 }
 
+header {
+	background: none repeat scroll 0 0 #215676;
+	color: white;
+	padding-top: 10px;
+	border-bottom: 3px solid green;
+	
+	img {
+		background: white;
+		height: 30px;
+		width: 100px;
+		border: 2px solid green;
+	}
+}
+
 /* header {
   padding-top: 20px;
 }
@@ -15,20 +29,20 @@ header img {
   background: #cff;
 } */ /* CSS only form. Below is the SCSS form */
 
-header {
+/* header {
   padding-top: 20px;
 
   img {
     padding: 1em;
     background: #cff;
   }
-}
+} */
 
 section {
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
-  background: #cff;
+  background: white;   /* old- #cff */
 }
 
 section h1 {
@@ -71,9 +85,10 @@ a {
 
 nav {
   float: right;
-  background-color: #cff;
   padding: 0 0.7em;
   white-space: nowrap;
+  height: 50px;
+  font-size: 15px;
 }
 
 nav ul {
@@ -88,15 +103,17 @@ nav ul li {
 }
 
 nav ul li a {
+  color: white;
   padding: 0 5px;
-  font-weight: bold;
+  font-weight: none;
 }
 
 nav ul li a:visited {
-  color: #09c;
+  color: white;
 }
 
 nav ul li a:hover {
+  color: white;
   text-decoration: underline;
 }
 
@@ -124,9 +141,12 @@ a.signup_button {
 }
 
 footer {
+  padding-top: 10px;
+  background: none repeat scroll 0 0 #215676;   /* blue- #3BB0D7 dark_blue- #215676 */
+  border-top: 2px solid green;
+  color: white;
   text-align: center;
   margin-top: 10px;
-  width: 710px;
   margin-left: auto;
   margin-right: auto;
 }
