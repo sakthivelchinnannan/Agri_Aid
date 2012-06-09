@@ -5,17 +5,20 @@
     <%= render 'layouts/stylesheets' %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <div class="container" style="width:98%">
-      <%= render 'layouts/header' %> <br />
+  <%= render 'layouts/header' %> <br />
+  <div class="container" style="width:98%">
       <section>
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
         <% end %>
         <%= yield %>
       </section> <br />
+	  <!--
       <%= render 'layouts/footer' %>
+	  -->
       <%= debug(params) if Rails.env.development? %>
     </div>
   </body>

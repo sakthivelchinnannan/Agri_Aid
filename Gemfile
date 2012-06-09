@@ -7,7 +7,7 @@ gem 'rails', '3.1.1'
 
 # gem 'sqlite3'
 group :development, :test do
-        gem 'sqlite3', '1.3.5'
+    gem 'sqlite3', '1.3.5'
 #	gem 'rspec-rails', '2.8.1'
 	gem 'rspec-rails'
 end
@@ -25,6 +25,7 @@ end
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'twitter-bootstrap-rails', :git => "git://github.com/seyhunak/twitter-bootstrap-rails.git", :branch => "static"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
