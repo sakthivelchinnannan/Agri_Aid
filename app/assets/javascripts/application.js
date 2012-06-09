@@ -13,29 +13,31 @@
 //= require jquery.ui.dialog
 
 jQuery(function($) {
+  		$( "#dialog-modal" ).dialog({
+  		    autoOpen: false,
+			height: 100,
+			modal: true,
+			draggable: false,
+			closeOnEscape: false,
+			resizable: false
+		});
 
 $("#category_id").change(function(){
-  $("div.ui-overlay").css({'visibility':'visible'})
-  $("div.ui-widget").css({'visibility':'visible'})
-  $("#forOverlay").addClass("fakewindowcontain")
+  $( "#dialog-modal" ).dialog( "open" );
   var url = '/static_pages/updatedistrict_select?machinerycategory_id=' + $(this).val()
   jQuery.get(url, function(data) {
 	$("#districtSelect").html(data);
-	$("div.ui-overlay").css({'visibility':'hidden'})
-	$("div.ui-widget").css({'visibility':'hidden'})
+	$( "#dialog-modal" ).dialog("close");
   });
   return false;
 });
 
 $("#machinerycategory_id").change(function(){
-  $("div.ui-overlay").css({'visibility':'visible'})
-  $("div.ui-widget").css({'visibility':'visible'})
-  $("#forOverlay").addClass("fakewindowcontain")
+  $( "#dialog-modal" ).dialog( "open" );
   var url = '/static_pages/machine_select?machinerycategory_id=' + $(this).val()
   jQuery.get(url, function(data) {
 	$("#machineSelect").html(data);
-	$("div.ui-overlay").css({'visibility':'hidden'})
-	$("div.ui-widget").css({'visibility':'hidden'})
+	$( "#dialog-modal" ).dialog("close");
   });
   return false;
 });
@@ -51,14 +53,11 @@ $("#district_cd").change(function(){
 
 //////////////
 $("#lender_district_cd").change(function(){
-  $("div.ui-overlay").css({'visibility':'visible'})
-  $("div.ui-widget").css({'visibility':'visible'})
-  $("#forOverlay").addClass("fakewindowcontain")
+  $( "#dialog-modal" ).dialog( "open" );
   var url = '/static_pages/lndr_updatetaluk_select?district_cd=' + $(this).val()
   jQuery.get(url, function(data) {
 	$("#talukSelect").html(data);
-	$("div.ui-overlay").css({'visibility':'hidden'})
-	$("div.ui-widget").css({'visibility':'hidden'})
+	$( "#dialog-modal" ).dialog("close");
   });
   return false;
 });

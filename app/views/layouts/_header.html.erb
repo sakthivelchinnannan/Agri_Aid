@@ -17,7 +17,9 @@
 		    <% if lender_signed_in? %>
             	<li><%= link_to "Profile", current_lender %></li>
             <% end %>
-            <li><%= link_to "Help", help_path %></li>
+            <!--
+				<li><%= link_to "Help", help_path %></li>
+			-->
             <% if farmer_signed_in? %>
             	<li><%= link_to "Sign out", farmersignout_path, method: :delete %></li>
 		    <% elsif lender_signed_in? %>

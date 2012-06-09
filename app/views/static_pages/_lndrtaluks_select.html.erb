@@ -1,14 +1,11 @@
 <script type="text/javascript">
 jQuery(function($) {
 $("#lender_taluk_cd").change(function(){
-  $("div.ui-overlay").css({'visibility':'visible'})
-  $("div.ui-widget").css({'visibility':'visible'})
-  $("#forOverlay").addClass("fakewindowcontain")
+  		  $( "#dialog-modal" ).dialog( "open" );
   var url = '/static_pages/lndr_updatevillage_select?taluk_cd=' + $(this).val()
   jQuery.get(url, function(data) {
 	$("#villageSelect").html(data);
-	$("div.ui-overlay").css({'visibility':'hidden'})
-	$("div.ui-widget").css({'visibility':'hidden'})
+	$( "#dialog-modal" ).dialog("close");
   });
   return false;
 });

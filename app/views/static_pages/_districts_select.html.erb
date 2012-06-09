@@ -1,14 +1,11 @@
 <script type="text/javascript">
 jQuery(function($) {
 $("#district_cd").change(function(){
-  $("div.ui-overlay").css({'visibility':'visible'})
-  $("div.ui-widget").css({'visibility':'visible'})
-  $("#forOverlay").addClass("fakewindowcontain")
+  		  $( "#dialog-modal" ).dialog( "open" );
   var url = '/static_pages/updatetaluk_select?district_cd=' + $(this).val()
   jQuery.get(url, function(data) {
 	$("#talukSelect").html(data);
-	$("div.ui-overlay").css({'visibility':'hidden'})
-	$("div.ui-widget").css({'visibility':'hidden'})
+	$( "#dialog-modal" ).dialog("close");
   });
   return false;
 });

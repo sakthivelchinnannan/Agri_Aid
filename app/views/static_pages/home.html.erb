@@ -1,13 +1,8 @@
 <% provide(:title, 'Home')%>
 <% if lender_signed_in? %>
-  <div id="forOverlay">
-	<div class="ui-overlay" style="visibility: hidden"><div class="ui-widget-overlay"></div><div class="ui-widget-shadow ui-corner-all" style="width: 302px; height: 100px; position: absolute; left: 480px; top: 200px;"></div></div>
-	<div style="position: absolute; width: 280px; height: 77px;left: 480px; top: 200px; padding: 10px; visibility: hidden" class="ui-widget ui-widget-content ui-corner-all">
-			<div class="ui-dialog-content ui-widget-content" style="background: none; border: 0;">
-				<p>Please wait...</p>
-			</div>
+	<div id="dialog-modal" title="Progress Notification">
+		<p>Please wait...</p>
 	</div>
-  </div>
 <table class="profile">
   <tr>
     <td class="main">
@@ -26,12 +21,9 @@
 	  <div id="forOverlay">
       	<h1 class="micropost">Find neaby available Machineries</h1>
       	<%= render 'shared/lendablemachinerysearch_form' %>
-	  	<div class="ui-overlay" style="visibility: hidden"><div class="ui-widget-overlay"></div><div class="ui-widget-shadow ui-corner-all" style="width: 302px; height: 100px; position: absolute; left: 480px; top: 200px;"></div></div>
-		<div style="position: absolute; width: 280px; height: 77px;left: 480px; top: 200px; padding: 10px; visibility: hidden" class="ui-widget ui-widget-content ui-corner-all">
-			<div class="ui-dialog-content ui-widget-content" style="background: none; border: 0;">
-				<p>Please wait...</p>
-			</div>
-		</div>
+        <div id="dialog-modal" title="Progress Notification">
+        	<p>Please wait...</p>
+        </div>
 	  </div>
     </td>
   </tr>
