@@ -10,7 +10,11 @@ class LendablemachineriesController < ApplicationController
       render root_path
     end
   end
-
+  
   def destroy
+  	@lm = Lendablemachinery.find(params[:id])
+	@lm.destroy
+	flash[:success] = "Lendable machine deleted!"
+	redirect_to root_path
   end
 end
