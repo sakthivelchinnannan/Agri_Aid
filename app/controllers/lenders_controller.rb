@@ -15,7 +15,7 @@ class LendersController < ApplicationController
     @lender = Lender.new(params[:lender])
     if @lender.save
       lender_sign_in @lender
-      flash[:success] = "You are registered in Primal Project!"
+      flash[:success] = "You are registered in Agri Aid!"
       redirect_to @lender
     else
       render 'new'

@@ -6,6 +6,7 @@ AgriAid::Application.routes.draw do
   resources :lendersessions, only: [:new, :create, :destroy]
   resources :lendablemachineries, only: [:create, :update, :destroy]
 
+  match 'lendablemachineries/edit/:id' => 'lendablemachineries#edit'
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'

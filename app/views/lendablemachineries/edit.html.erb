@@ -1,0 +1,18 @@
+<h1>Editing Lendable Machinery</h1>
+<%= form_for(@lm) do |f| %>
+	<%= render 'shared/error_messages', :object => f.object %>
+	<div class="field">
+		<%= f.hidden_field :lender_id %>
+	</div>
+	<div class="field">
+		<%= f.label :numofmachines %>
+		<%= f.text_field :numofmachines %>
+	</div>
+	<div class="field">
+		<%= f.label :rateperhr %>
+		<%= f.text_field :rateperhr %>
+	</div>
+	<div class="actions">
+		<%= f.submit "Update" %>
+	</div>
+<% end %>

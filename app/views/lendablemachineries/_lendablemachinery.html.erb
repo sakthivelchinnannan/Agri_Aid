@@ -18,6 +18,12 @@
 				<%= lendablemachinery.numofmachines %>
 			</td>
 			<td>
-				<%= link_to 'Delete Machinery', [lendablemachinery], :confirm => 'Are you sure?', :method => :delete %>
+				<%# Look for the rule "match 'lendablemachineries/edit/:id'". The route path order follows the argument order in link_to helper! %>
+				<%= link_to 'Edit', :controller => 'lendablemachineries',
+														:action => 'edit',
+														:id => lendablemachinery.id %>
+			</td>
+			<td>
+				<%= link_to 'Delete', [lendablemachinery], :confirm => 'Are you sure?', :method => :delete %>
 			</td>
 </tr>
