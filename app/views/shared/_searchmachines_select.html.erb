@@ -1,2 +1,2 @@
-<%= label_tag(:select_district) %><br />
+<%= label_tag(:select_district) %>
 <%= select_tag(:district_cd, options_for_select(District.all.map {|m|[m.name,m.id]})) %>

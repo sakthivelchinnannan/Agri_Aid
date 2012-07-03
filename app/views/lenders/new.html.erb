@@ -4,19 +4,19 @@
 <%= form_for(@lender) do |f| %>
   <%= render 'shared/lender_error_messages', object: f.object %>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br />
+    <%= f.label :phone %>
     <%= f.text_field :phone %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :state %><br />
+    <%= f.label :state %>
     <%= select(:lender, :state_cd, options_for_select(State.all.map {|m|[m.name,m.state_cd]}.insert(0,'Select a State..'))) %>
   </div>
   <div id="forOverlay">
@@ -28,21 +28,21 @@
 	</div>
   </div>
   <div class="field">
-    <%= f.label :district %><br />
+    <%= f.label :district %>
     <%= select(:lender, :district_cd, options_for_select(District.all.map {|m|[m.name,m.district_cd]}.insert(0,'Select a district..'))) %>
   </div>
   <div class="field">
-    <%= f.label :taluk %><br />
+    <%= f.label :taluk %>
 	<span id="talukSelect">
   	</span>
   </div>
   <div class="field">
-    <%= f.label :village %><br />
+    <%= f.label :village %>
     <span id="villageSelect">
   	</span>
   </div>
   <div class="field">
-    <%= f.label :street %><br />
+    <%= f.label :street %>
     <%= f.text_field :street %>
   </div>
   <div class="actions">

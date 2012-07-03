@@ -1,16 +1,20 @@
 <% provide :title, "Sign in" %>
-<h1>Sign in</h1>
+<h1>Sign in</h1><br />
 <%= form_for(:lendersession, url: lendersessions_path) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
+<!--
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
+-->
   <div class="actions">
     <%= f.submit "Sign in" %>
   </div>
 <% end %>
-<p>New user? <%= link_to "Sign up now!", lendersignup_path %></p>
+<!--
+	<p>New user? <%= link_to "Sign up now!", lendersignup_path %></p>
+-->

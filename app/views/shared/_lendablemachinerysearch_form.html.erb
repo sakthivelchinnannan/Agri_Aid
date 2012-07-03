@@ -3,9 +3,11 @@
   <span class="field">
 	<%= select_tag(:category_id, options_for_select(Machinerycategory.all.map {|m|[m.name,m.id]}.insert(0,'Select a category..'))) %>
   </span>
-<!--  <div id="stateSelect">
+<!--  
+	<div id="stateSelect">
   	State selection
-  </div></br>	-->
+  </div></br>
+-->
   <span id="districtSelect">
   </span>
   <span id="talukSelect">
